@@ -1,0 +1,144 @@
+:root {
+  /* Основные цвета */
+  --primary: #8B5CF6;
+  --primary-dark: #7C3AED;
+  --primary-light: #A78BFA;
+  
+  /* Тёмная тема */
+  --background: #0F0F1A;
+  --surface: #1A1A2E;
+  --surface-light: #252543;
+  --text: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --border: rgba(139, 92, 246, 0.2);
+}
+
+/* Светлая тема */
+[data-theme="light"] {
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-light: #F1F5F9;
+  --text: #1E293B;
+  --text-secondary: #64748B;
+  --border: rgba(139, 92, 246, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+.layout {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Шапка */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header .logo {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--primary), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.header a:hover {
+  color: var(--primary);
+}
+
+/* Поиск */
+.search-container {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  display: flex;
+  gap: 16px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 16px 24px;
+  font-size: 16px;
+  background: var(--surface);
+  border: 2px solid var(--surface-light);
+  border-radius: 12px;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.movie-app__filter {
+  width: 140px;
+  padding: 16px;
+  font-size: 16px;
+  background: var(--surface);
+  border: 2px solid var(--surface-light);
+  border-radius: 12px;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.movie-app__filter:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Сетка фильмов */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 32px;
+  padding: 24px 0;
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+  }
+
+  .movie-app__filter {
+    width: 100%;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 25px;
+    padding: 15px;
+  }
+}

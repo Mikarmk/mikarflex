@@ -1,0 +1,157 @@
+:root {
+    --primary-purple: #6b46c1;
+    --primary-purple-dark: #553c9a;
+    --primary-purple-light: #9f7aea;
+    --card-bg: #1a1a2e;
+    --text-color: #ffffff;
+    --border-color: rgba(139, 92, 246, 0.2);
+}
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 5px;
+  transition: transform 0.2s;
+}
+
+.like-button:hover {
+  transform: scale(1.2);
+}
+
+.movie-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.movie-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--surface);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card__link {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.movie-card__image-wrapper {
+    position: relative;
+    padding-top: 150%;
+    overflow: hidden;
+}
+
+.movie-card__poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-card__poster {
+    transform: scale(1.05);
+}
+
+.movie-card__content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+        to top,
+        var(--surface) 0%,
+        var(--surface-light) 100%
+    );
+}
+
+.movie-card__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+.movie-card__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: var(--surface-light);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 16px;
+}
+
+.movie-card__overview {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.movie-card__favorite-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    color: var(--text);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.movie-card__favorite-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.movie-card__favorite-btn.is-favorite {
+    background: var(--primary);
+}
+
+.movie-card__favorite-btn span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Стили для контейнера карточек */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: #13131f;
+}
+
+/* Добавьте эти стили в ваш глобальный CSS файл */
+body {
+    background: #13131f;
+    color: var(--text-color);
+} 

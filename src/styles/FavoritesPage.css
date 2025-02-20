@@ -1,0 +1,38 @@
+.favorites-page {
+    padding: 2rem;
+}
+
+.favorites-page h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.favorites-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.favorites-empty {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-color-secondary);
+    padding: 3rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+@media (max-width: 768px) {
+    .favorites-page {
+        padding: 1rem;
+    }
+
+    .favorites-page h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
